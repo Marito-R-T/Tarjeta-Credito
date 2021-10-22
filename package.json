@@ -5,7 +5,8 @@
     "mysql2": "^2.3.2",
     "nodemailer": "^6.7.0",
     "nodemailer-express-handlebars": "^4.0.0",
-    "sequelize": "^6.7.0"
+    "sequelize": "^6.7.0",
+    "sequelize-auto": "^0.8.5"
   },
   "scripts": {
     "dev": "nodemon index.js"
