@@ -1,10 +1,35 @@
 //va a la instancia de modelo y de sequelize del archivo bd
 //params es lo que viene en la URL, body es lo que viene como formulario osea x-www-form-urlenconded
-var { Tarjeta } = require('../db');
+var { Tarjeta, Usuario, Tipo_cuenta, Moneda, Deshabilitacion, Eliminacion } = require('../db');
+Usuario.hasMany(Tarjeta, { foreignKey: 'usuario_id' })
+Tarjeta.belongsTo(Usuario, { foreignKey: 'usuario_id' })
+
+Tipo_cuenta.hasMany(Tarjeta, { foreignKey: 'tipo_cuenta_id' })
+Tarjeta.belongsTo(Tipo_cuenta, { foreignKey: 'tipo_cuenta_id' })
+
+Moneda.hasMany(Tipo_cuenta, { foreignKey: 'moneda_id' })
+Tipo_cuenta.belongsTo(Moneda, { foreignKey: 'moneda_id' })
+
+Tarjeta.hasMany(Deshabilitacion, { foreignKey: 'tarjeta_id' })
+Deshabilitacion.belongsTo(Tarjeta, { foreignKey: 'tarjeta_id' })
+
+Tarjeta.hasMany(Eliminacion, { foreignKey: 'tarjeta_id' })
+Eliminacion.belongsTo(Tarjeta, { foreignKey: 'tarjeta_id' })
 
 const listar = async (req, res) => {
     try {
-        const tarjeta = await Tarjeta.findAll();
+        const tarjeta = await Tarjeta.findAll({
+            attributes: ['tarjeta_id', 'numero_tarjeta', 'cvv', 'fecha_vencimiento', 'notifyme', 'saldo'],
+            include: [
+                Usuario,
+                {
+                    model: Tipo_cuenta,
+                    include: [Moneda]
+                },
+                Deshabilitacion,
+                Eliminacion
+            ]
+        });
         return res.status(200).json({ tarjeta });
     } catch (error) {
         //si nuestra consulta falla tira un mensaje de error

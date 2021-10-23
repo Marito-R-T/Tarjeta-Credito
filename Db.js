@@ -30,6 +30,14 @@ const comentarioModel = require('./model/Comentario');
 //invocación al modelo que tiene la estructura de la tabla.
 const Comentario = comentarioModel(sequelize, Sequelize);
 
+const deshabilitacionModel = require('./model/Deshabilitacion');
+//invocación al modelo que tiene la estructura de la tabla.
+const Deshabilitacion = deshabilitacionModel(sequelize, Sequelize);
+
+const eliminacionModel = require('./model/Eliminacion');
+//invocación al modelo que tiene la estructura de la tabla.
+const Eliminacion = eliminacionModel(sequelize, Sequelize);
+
 sequelize.sync({ force: false }).then(() => {
     console.log('Tablas sincronizadas')
 }).catch(err => console.log(err));;
@@ -41,4 +49,6 @@ module.exports = {
     Usuario,
     Tipo_cuenta,
     Comentario,
+    Deshabilitacion,
+    Eliminacion,
 };
