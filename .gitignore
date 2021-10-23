@@ -1,4 +1,6 @@
 node_modules/
+front-end/node_modules/
 artisan_make.js
 ApiRouterUnitario.js
 BDGeneradoUnitario.js
+config.js
