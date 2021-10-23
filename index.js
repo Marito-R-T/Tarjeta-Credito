@@ -6,7 +6,7 @@ const apiRouter = require('./routes/api')
 const cors = require("cors")
 
 const app = express();
-require('./db');
+require('./Db');
 
 app.use(cors())
 app.options('*', cors())

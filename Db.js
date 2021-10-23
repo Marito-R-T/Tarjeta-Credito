@@ -38,9 +38,10 @@ const eliminacionModel = require('./model/Eliminacion');
 //invocación al modelo que tiene la estructura de la tabla.
 const Eliminacion = eliminacionModel(sequelize, Sequelize);
 
+sequelize.query('SET FOREIGN_KEY_CHECKS = 0').then(
 sequelize.sync({ force: false }).then(() => {
     console.log('Tablas sincronizadas')
-}).catch(err => console.log(err));;
+}).catch(err => console.log(err)));
 
 module.exports = {
     sequelize,
