@@ -10,31 +10,31 @@ const sequelize = new Sequelize(
 );
 
 
-const tarjetaModel = require('./model/Tarjeta');
+const tarjetaModel = require('./Model/Tarjeta');
 //invocación al modelo que tiene la estructura de la tabla.
 const Tarjeta = tarjetaModel(sequelize, Sequelize);
 
-const monedaModel = require('./model/Moneda');
+const monedaModel = require('./Model/Moneda');
 //invocación al modelo que tiene la estructura de la tabla.
 const Moneda = monedaModel(sequelize, Sequelize);
 
-const usuarioModel = require('./model/Usuario');
+const usuarioModel = require('./Model/Usuario');
 //invocación al modelo que tiene la estructura de la tabla.
 const Usuario = usuarioModel(sequelize, Sequelize);
 
-const tipo_cuentaModel = require('./model/Tipo_cuenta');
+const tipo_cuentaModel = require('./Model/Tipo_cuenta');
 //invocación al modelo que tiene la estructura de la tabla.
 const Tipo_cuenta = tipo_cuentaModel(sequelize, Sequelize);
 
-const comentarioModel = require('./model/Comentario');
+const comentarioModel = require('./Model/Comentario');
 //invocación al modelo que tiene la estructura de la tabla.
 const Comentario = comentarioModel(sequelize, Sequelize);
 
-const deshabilitacionModel = require('./model/Deshabilitacion');
+const deshabilitacionModel = require('./Model/Deshabilitacion');
 //invocación al modelo que tiene la estructura de la tabla.
 const Deshabilitacion = deshabilitacionModel(sequelize, Sequelize);
 
-const eliminacionModel = require('./model/Eliminacion');
+const eliminacionModel = require('./Model/Eliminacion');
 //invocación al modelo que tiene la estructura de la tabla.
 const Eliminacion = eliminacionModel(sequelize, Sequelize);
 
