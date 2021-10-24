@@ -17,7 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api", apiRouter);
 
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/front-end/src/index.html'));
+    res.send(__dirname);
+  //res.sendFile(path.join(__dirname + '/front-end/src/index.html'));
 });
 
 app.listen(puerto, () => {
