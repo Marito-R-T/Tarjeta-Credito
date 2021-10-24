@@ -26,23 +26,6 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     sequelize,
     tableName: 'Transaccion',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "transaccion_id" },
-        ]
-      },
-      {
-        name: "IX_Relationship8",
-        using: "BTREE",
-        fields: [
-          { name: "tarjeta_id" },
-        ]
-      },
-    ]
+    timestamps: false
   });
 };

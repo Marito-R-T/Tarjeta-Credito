@@ -22,31 +22,6 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     sequelize,
     tableName: 'Deshabilitacion',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id" },
-        ]
-      },
-      {
-        name: "id",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id" },
-        ]
-      },
-      {
-        name: "IX_Relationship9",
-        using: "BTREE",
-        fields: [
-          { name: "tarjeta_id" },
-        ]
-      },
-    ]
+    timestamps: false
   });
 };

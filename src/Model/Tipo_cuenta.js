@@ -26,31 +26,6 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     sequelize,
     tableName: 'Tipo_cuenta',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "tipo_cuenta_id" },
-        ]
-      },
-      {
-        name: "tipo_cuenta_id",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "tipo_cuenta_id" },
-        ]
-      },
-      {
-        name: "IX_Relationship5",
-        using: "BTREE",
-        fields: [
-          { name: "moneda_id" },
-        ]
-      },
-    ]
+    timestamps: false
   });
 };

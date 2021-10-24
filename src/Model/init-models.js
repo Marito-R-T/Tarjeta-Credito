@@ -18,20 +18,20 @@ function initModels(sequelize) {
   var Transaccion = _Transaccion(sequelize, DataTypes);
   var Usuario = _Usuario(sequelize, DataTypes);
 
-  Tipo_cuenta.belongsTo(Moneda, { as: "moneda", foreignKey: "moneda_id"});
-  Moneda.hasMany(Tipo_cuenta, { as: "tipo_cuenta", foreignKey: "moneda_id"});
-  Deshabilitacion.belongsTo(Tarjeta, { as: "tarjetum", foreignKey: "tarjeta_id"});
-  Tarjeta.hasMany(Deshabilitacion, { as: "deshabilitacions", foreignKey: "tarjeta_id"});
-  Eliminacion.belongsTo(Tarjeta, { as: "tarjetum", foreignKey: "tarjeta_id"});
-  Tarjeta.hasMany(Eliminacion, { as: "eliminacions", foreignKey: "tarjeta_id"});
-  Transaccion.belongsTo(Tarjeta, { as: "tarjetum", foreignKey: "tarjeta_id"});
-  Tarjeta.hasMany(Transaccion, { as: "transaccions", foreignKey: "tarjeta_id"});
-  Tarjeta.belongsTo(Tipo_cuenta, { as: "tipo_cuentum", foreignKey: "tipo_cuenta_id"});
-  Tipo_cuenta.hasMany(Tarjeta, { as: "tarjeta", foreignKey: "tipo_cuenta_id"});
-  Comentario.belongsTo(Usuario, { as: "usuario", foreignKey: "usuario_id"});
-  Usuario.hasMany(Comentario, { as: "comentarios", foreignKey: "usuario_id"});
-  Tarjeta.belongsTo(Usuario, { as: "usuario", foreignKey: "usuario_id"});
-  Usuario.hasMany(Tarjeta, { as: "tarjeta", foreignKey: "usuario_id"});
+  Tipo_cuenta.belongsTo(Moneda, {foreignKey: "moneda_id"});
+  Moneda.hasMany(Tipo_cuenta, {foreignKey: "moneda_id"});
+  Deshabilitacion.belongsTo(Tarjeta, {foreignKey: "tarjeta_id"});
+  Tarjeta.hasMany(Deshabilitacion, {foreignKey: "tarjeta_id"});
+  Eliminacion.belongsTo(Tarjeta, {foreignKey: "tarjeta_id"});
+  Tarjeta.hasMany(Eliminacion, {foreignKey: "tarjeta_id"});
+  Transaccion.belongsTo(Tarjeta, { foreignKey: "tarjeta_id"});
+  Tarjeta.hasMany(Transaccion, { foreignKey: "tarjeta_id"});
+  Tarjeta.belongsTo(Tipo_cuenta, { foreignKey: "tipo_cuenta_id"});
+  Tipo_cuenta.hasMany(Tarjeta, { foreignKey: "tipo_cuenta_id"});
+  Comentario.belongsTo(Usuario, { foreignKey: "usuario_id"});
+  Usuario.hasMany(Comentario, { foreignKey: "usuario_id"});
+  Tarjeta.belongsTo(Usuario, { foreignKey: "usuario_id"});
+  Usuario.hasMany(Tarjeta, { foreignKey: "usuario_id"});
 
   return {
     Comentario,

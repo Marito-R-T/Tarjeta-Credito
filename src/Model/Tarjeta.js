@@ -47,46 +47,6 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     sequelize,
     tableName: 'Tarjeta',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "tarjeta_id" },
-        ]
-      },
-      {
-        name: "tarjeta_id",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "tarjeta_id" },
-        ]
-      },
-      {
-        name: "numero_tarjeta",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "numero_tarjeta" },
-        ]
-      },
-      {
-        name: "IX_Relationship3",
-        using: "BTREE",
-        fields: [
-          { name: "usuario_id" },
-        ]
-      },
-      {
-        name: "IX_Relationship4",
-        using: "BTREE",
-        fields: [
-          { name: "tipo_cuenta_id" },
-        ]
-      },
-    ]
+    timestamps: false
   });
 };

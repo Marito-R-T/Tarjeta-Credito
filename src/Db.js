@@ -7,6 +7,17 @@ const sequelize = new Sequelize(
     host: database.host,
     port: database.port,
     dialect: "postgres",
+    dialectOptions: {
+        ssl: {
+            required:true,
+            rejectUnauthorized: false
+        }
+    },
+    pool: {
+        max: 5,
+        min: 0,
+        idle: 10000
+    }
 }
 );
 
@@ -39,10 +50,14 @@ const eliminacionModel = require('./Model/Eliminacion');
 //invocación al modelo que tiene la estructura de la tabla.
 const Eliminacion = eliminacionModel(sequelize, Sequelize);
 
-sequelize.query('SET FOREIGN_KEY_CHECKS = 0').then(
+/*sequelize.query('SET FOREIGN_KEY_CHECKS = 0').then(
 sequelize.sync({ force: false }).then(() => {
     console.log('Tablas sincronizadas')
-}).catch(err => console.log(err)));
+}).catch(err => console.log(err)));*/
+
+sequelize.sync({ force: false }).then(() => {
+    console.log('Tablas sincronizadas')
+});
 
 module.exports = {
     sequelize,
