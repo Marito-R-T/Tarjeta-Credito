@@ -10,7 +10,7 @@
     "sequelize-auto": "^0.8.5"
   },
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   }
 }

@@ -2,11 +2,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const puerto = process.env.PORT || 3000
-const apiRouter = require('../routes/api')
+const apiRouter = require('./routes/api')
 const cors = require("cors")
 
 const app = express();
-require('../Db');
+require('./Db');
 
 app.use(cors())
 app.options('*', cors())
