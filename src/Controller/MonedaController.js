@@ -1,6 +1,6 @@
 //va a la instancia de modelo y de sequelize del archivo bd
 //params es lo que viene en la URL, body es lo que viene como formulario osea x-www-form-urlenconded
-var { Moneda} = require('../db');
+var { Moneda} = require('../Db');
 
 const listar = async (req, res) => {
     try {
