@@ -18,7 +18,7 @@ app.use("/api", apiRouter);
 
 app.use(express.static(__dirname + '/front-end/src'));
 
-app.get('/', function(req, res) {
+app.get('/*', function(req, res) {
    // res.send(__dirname);
     res.send(__dirname+'/front-end/src/index.html');
     //res.sendFile(path.join(__dirname + '/front-end/src/index.html'));
