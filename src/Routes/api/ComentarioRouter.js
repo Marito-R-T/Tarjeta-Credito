@@ -2,7 +2,7 @@
     //aqui tambien usamos rutas
     const router = require('express').Router();
     //le pedimos que llame al controlador 
-    var ComentarioController = require('../../controller/ComentarioController');
+    var ComentarioController = require('../../Controller/ComentarioController');
     
     //este es nuestro listado de rutas para los metodos
     router.get('/', ComentarioController.listar);

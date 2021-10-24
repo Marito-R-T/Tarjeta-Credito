@@ -2,7 +2,7 @@
     //aqui tambien usamos rutas
     const router = require('express').Router();
     //le pedimos que llame al controlador 
-    var UsuarioController = require('../../controller/UsuarioController');
+    var UsuarioController = require('../../Controller/UsuarioController');
     
     //este es nuestro listado de rutas para los metodos
     router.get('/', UsuarioController.listar);

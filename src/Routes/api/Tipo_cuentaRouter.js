@@ -2,7 +2,7 @@
     //aqui tambien usamos rutas
     const router = require('express').Router();
     //le pedimos que llame al controlador 
-    var Tipo_cuentaController = require('../../controller/Tipo_cuentaController');
+    var Tipo_cuentaController = require('../../Controller/Tipo_cuentaController');
     
     //este es nuestro listado de rutas para los metodos
     router.get('/', Tipo_cuentaController.listar);
