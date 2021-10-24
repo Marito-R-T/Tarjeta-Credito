@@ -17,6 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api", apiRouter);
 
 
+app.get('/', (req, res) => {
+    res.send('Hola mundo')
+})
+
 app.listen(puerto, () => {
     console.log("Servidor Iniciado en el puerto" + puerto);
 });
