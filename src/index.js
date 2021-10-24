@@ -16,10 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", apiRouter);
 
-
-app.get('/', (req, res) => {
-    res.send('Hola mundo')
-})
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/front-end/src/index.html'));
+});
 
 app.listen(puerto, () => {
     console.log("Servidor Iniciado en el puerto" + puerto);
