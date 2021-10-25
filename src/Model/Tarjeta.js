@@ -7,6 +7,10 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true
     },
+    identificador: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
     numero_tarjeta: {
       type: DataTypes.CHAR(10),
       allowNull: false,
