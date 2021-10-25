@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-const puerto = process.env.PORT || 3000
+const puerto = process.env.PORT || 5432
 const apiRouter = require('./Routes/api.js')
 const cors = require("cors")
 
