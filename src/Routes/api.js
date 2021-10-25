@@ -23,5 +23,9 @@ var apiComentarioRouter = require('./api/ComentarioRouter');
 //si una ruta viene con /comentario el encargado de la ruta será apiComentarioRouter, y se concatena a router
 router.use('/comentario', apiComentarioRouter);
 
+var apiComentarioRouter = require('./api/PortalPagosRouter');
+//si una ruta viene con /comentario el encargado de la ruta será apiComentarioRouter, y se concatena a router
+router.use('/portal', apiComentarioRouter);
+
 
 module.exports = router;
