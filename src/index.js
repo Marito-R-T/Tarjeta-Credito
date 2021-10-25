@@ -1,6 +1,7 @@
 //todas las librarias y paquetes que se requieren
 const express = require('express');
 const bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 const puerto = process.env.PORT || 3000
 const apiRouter = require('./Routes/api.js')
 const cors = require("cors")
@@ -8,21 +9,20 @@ const cors = require("cors")
 const app = express();
 require('./Db');
 
-app.use(cors())
-app.options('*', cors())
+const corsOptions = {origin: "https://tarjeta-credito-seminario.herokuapp.com/"}
+app.use(cors({
+    origin: "https://tarjeta-credito-seminario.herokuapp.com/",
+    credentials: true
+}));
+app.use(cookieParser());
+app.use(bodyParser());
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 app.use("/api", apiRouter);
 
-app.use(express.static(__dirname + '/front-end/src'));
-
-app.get('/', function(req, res) {
-   // res.send(__dirname);
-   //console.log(__dirname+'/front-end/src/index.html');
-    res.sendFile(path.join(__dirname + '/front-end/src/index.html'));
-});
+app.use(express.static(__dirname + '/front-end'));
 
 app.listen(puerto, () => {
     console.log("Servidor Iniciado en el puerto" + puerto);
