@@ -31,7 +31,7 @@ const solicitar_retirar_saldo = (req, res) => {
 };
 
 const solicitar_depositar_saldo = (req, res) => {
-    Tarjeta.findOne({where: {identificador: req.body.identificador}}).then(cuenta=>{
+    Tarjeta.findOne({where: {identificador: req.body.identificador}}).then(tarjeta=>{
         if(tarjeta == null){
             res.status(401).json({information_message: 'No existe la cuenta solicitada'});
         }else{
